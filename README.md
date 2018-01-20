@@ -10,13 +10,14 @@ just like imitating the portrait mode of modern day phone camera's.
 
 #Original Image
 <p align="center">
-  <img src='https://i.imgur.com/KgIYWlV.jpg' />
+  <img src='https://i.imgur.com/KgIYWlV.jpg'  width="350" />
 </p>
 
 
 #Output Image
 <p align="center">
-  <img src="https://ibb.co/jORb1w" width="350"/>
+  <img src='https://i.imgur.com/thWFTKt.jpg' width="350" />
+  
 </p>
 
 

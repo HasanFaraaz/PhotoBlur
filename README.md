@@ -10,7 +10,7 @@ just like imitating the portrait mode of modern day phone camera's.
 
 #Original Image
 <p align="center">
-  <img src="https://ibb.co/k6YdEG" width="350"/>
+  <img src='https://i.imgur.com/KgIYWlV.jpg' />
 </p>
 
 

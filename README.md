@@ -8,20 +8,20 @@ This is a practical application of detecting a human in an image & getting the m
 just like imitating the portrait mode of modern day phone camera's.
 
 
-##Original Image
+<h2>Original Image</h2>
 <p align="center">
   <img src='https://i.imgur.com/KgIYWlV.jpg'  width="350" />
 </p>
 
 
-##Detect the person
+<h2>Detect the person</h2>
 <p align="center">
   <img src='https://i.imgur.com/CXbzPJB.png' width="350" />
 </p>
 
 
 
-##Output Image
+<h2>Output Image</h2>
 <p align="center">
   <img src='https://i.imgur.com/thWFTKt.jpg' width="350" />
   

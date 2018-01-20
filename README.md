@@ -2,18 +2,25 @@
 PhotoBlurring by use of tensorFlow &amp; OpenCv libraries. Idea inspired by Waleedka's RCNN library. 
 https://github.com/matterport/Mask_RCNN
 
-#PhotBlur
+#PhotoBlur
 
 This is a practical application of detecting a human in an image & getting the masking co-ordinates of the person & blurring the background,
 just like imitating the portrait mode of modern day phone camera's.
 
 
 #Original Image
-![Original Image](https://ibb.co/k6YdEG)
+<p align="center">
+  <img src="https://ibb.co/k6YdEG" width="350"/>
+</p>
 
 
 #Output Image
-![Blurred Image](https://ibb.co/jORb1w)
+<p align="center">
+  <img src="https://ibb.co/jORb1w" width="350"/>
+</p>
+
+
+
 
 
 

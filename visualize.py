@@ -6,7 +6,7 @@ Copyright (c) 2017 Matterport, Inc.
 Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
 """
-
+import time
 import random
 import itertools
 import colorsys
@@ -17,10 +17,10 @@ import matplotlib.patches as patches
 import matplotlib.lines as lines
 from matplotlib.patches import Polygon
 import IPython.display
-
+import matplotlib
 import utils
-
-
+from scipy.misc import toimage
+import cv2
 ############################################################
 #  Visualization
 ############################################################
@@ -143,7 +143,9 @@ def display_instances(image, boxes, masks, class_ids, class_names,
             p = Polygon(verts, facecolor="none", edgecolor=color)
             ax.add_patch(p)
     ax.imshow(masked_image.astype(np.uint8))
-    plt.show()
+    #toimage(masked_image).show()#worked
+    toimage(masked_image).save(fp='maskonly\\'+time.strftime("%Y%m%d-%H%M%S")+'.jpg')
+    #plt.show()
 
 
 def draw_rois(image, rois, refined_rois, mask, class_ids, class_names, limit=10):

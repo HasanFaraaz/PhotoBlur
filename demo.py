@@ -122,16 +122,21 @@ class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
 # Load a random image from the images folder
 #while True:
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = scipy.misc.imread(os.path.join(IMAGE_DIR, random.choice(file_names)))
+for files in file_names:
+    print("Masking for:-",files)
+    image = scipy.misc.imread(os.path.join(IMAGE_DIR, files))
 
-# Run detection
-results = model.detect([image], verbose=1)
+    try:
+        # Run detection
+        results = model.detect([image], verbose=1)
 
-# Visualize results
-r = results[0]
+        # Visualize results
+        r = results[0]
 
-#time.sleep(5)
-visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'], class_names, r['scores'])
+        # time.sleep(5)
+        visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],
+                                    class_names, r['scores'])
 
 
-
+    except:
+        pass

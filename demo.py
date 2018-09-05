@@ -1,12 +1,8 @@
-
 # coding: utf-8
-
 # # Mask R-CNN Demo
 # 
 # A quick intro to using the pre-trained model to detect and segment objects.
-
 # In[14]:
-
 
 import os
 import sys

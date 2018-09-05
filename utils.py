@@ -1,7 +1,6 @@
 """
 Mask R-CNN
 Common utility functions and classes.
-
 Copyright (c) 2017 Matterport, Inc.
 Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
@@ -16,7 +15,6 @@ import tensorflow as tf
 import scipy.misc
 import skimage.color
 
-
 ############################################################
 #  Bounding Boxes
 ############################################################
@@ -24,7 +22,6 @@ import skimage.color
 def extract_bboxes(mask):
     """Compute bounding boxes from masks.
     mask: [height, width, num_instances]. Mask pixels are either 1 or 0.
-
     Returns: bbox array [num_instances, (y1, x1, y2, x2)].
     """
     boxes = np.zeros([mask.shape[-1], 4], dtype=np.int32)
@@ -46,7 +43,6 @@ def extract_bboxes(mask):
         boxes[i] = np.array([y1, x1, y2, x2])
     return boxes.astype(np.int32)
 
-
 def compute_iou(box, boxes, box_area, boxes_area):
     """Calculates IoU of the given box with the array of the given boxes.
     box: 1D vector [y1, x1, y2, x2]
@@ -67,7 +63,6 @@ def compute_iou(box, boxes, box_area, boxes_area):
     iou = intersection / union
     return iou
 
-
 def compute_overlaps(boxes1, boxes2):
     """Computes IoU overlaps between two sets of boxes.
     boxes1, boxes2: [N, (y1, x1, y2, x2)].
@@ -85,7 +80,6 @@ def compute_overlaps(boxes1, boxes2):
         box2 = boxes2[i]
         overlaps[:, i] = compute_iou(box2, boxes1, area2[i], area1)
     return overlaps
-
 
 def non_max_suppression(boxes, scores, threshold):
     """Performs non-maximum supression and returns indicies of kept boxes.
@@ -106,7 +100,7 @@ def non_max_suppression(boxes, scores, threshold):
 
     # Get indicies of boxes sorted by scores (highest first)
     ixs = scores.argsort()[::-1]
-
+	
     pick = []
     while len(ixs) > 0:
         # Pick top box and add its index to the list
@@ -198,7 +192,6 @@ def box_refinement(box, gt_box):
     dw = np.log(gt_width / width)
 
     return np.stack([dy, dx, dh, dw], axis=1)
-
 
 ############################################################
 #  Dataset

@@ -138,5 +138,7 @@ for files in file_names:
                                     class_names, r['scores'])
 
 
-    except:
+    except :
+        print()
+        print("Exception occured on",files)
         pass

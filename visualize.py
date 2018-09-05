@@ -145,6 +145,7 @@ def display_instances(image, boxes, masks, class_ids, class_names,
     ax.imshow(masked_image.astype(np.uint8))
     #toimage(masked_image).show()#worked
     toimage(masked_image).save(fp='maskonly\\'+time.strftime("%Y%m%d-%H%M%S")+'.jpg')
+    time.sleep(5)
     #plt.show()
 
 

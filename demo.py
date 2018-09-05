@@ -19,8 +19,6 @@ import model as modellib
 import visualize
 import  cv2
 
-
-
 #get_ipython().run_line_magic('matplotlib', 'inline')
 
 # Root directory of the project
@@ -37,7 +35,6 @@ COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
 # Directory of images to run detection on
 IMAGE_DIR = os.path.join(ROOT_DIR, "selfies")
 
-
 # ## Configurations
 # 
 # We'll be using a model trained on the MS-COCO dataset. The configurations of this model are in the ```CocoConfig``` class in ```coco.py```.
@@ -45,7 +42,6 @@ IMAGE_DIR = os.path.join(ROOT_DIR, "selfies")
 # For inferencing, modify the configurations a bit to fit the task. To do so, sub-class the ```CocoConfig``` class and override the attributes you need to change.
 
 # In[15]:
-
 
 class InferenceConfig(coco.CocoConfig):
     # Set batch size to 1 since we'll be running inference on
@@ -56,18 +52,15 @@ class InferenceConfig(coco.CocoConfig):
 config = InferenceConfig()
 config.print()
 
-
 # ## Create Model and Load Trained Weights
 
 # In[16]:
-
 
 # Create model object in inference mode.
 model = modellib.MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=config)
 
 # Load weights trained on MS-COCO
 model.load_weights(COCO_MODEL_PATH, by_name=True)
-
 
 # ## Class Names
 # 
@@ -90,7 +83,6 @@ model.load_weights(COCO_MODEL_PATH, by_name=True)
 
 # In[17]:
 
-
 # COCO Class names
 # Index of the class in the list is its ID. For example, to get ID of
 # the teddy bear class, use: class_names.index('teddy bear')
@@ -111,9 +103,7 @@ class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
                'teddy bear', 'hair drier', 'toothbrush']
 #class_names = ['person','bicycle']
 
-
 # In[18]:
-
 
 # Load a random image from the images folder
 #while True:
@@ -132,7 +122,6 @@ for files in file_names:
         # time.sleep(5)
         visualize.display_instances(image, r['rois'], r['masks'], r['class_ids'],
                                     class_names, r['scores'])
-
 
     except :
         print()
